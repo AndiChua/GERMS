@@ -158,7 +158,7 @@
         animation-iteration-count: infinite;
     }
     
-    #deals>ul>li {
+    #deals ul>li {
         width: 305px;
         width: calc(33% - 50px);
         margin-right: 50px;
@@ -168,11 +168,11 @@
         margin-bottom: 147px;
     }
 
-    #artist>.content {
+    #artist .content {
         text-align: right;
     }
 
-    #artist>.content>p {
+    #artist .content>p {
         padding-right: 18px;
         padding-left: 0px;
         max-width: 671px;
@@ -200,16 +200,16 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    #home>div{
+    #home div.content{
         padding-top: 58px;
         max-width: 448px;
         max-width: calc(100% - 40px - 506px);
     }
-    #artist>.content{
+    #artist .content{
         padding-top: 59px;
     }
 
-    #artist>.content>p {
+    #artist .content>p {
         padding-left: 89px;
         max-width: calc(100% - 89px - 18px - 398px);
     }
@@ -239,13 +239,13 @@
         left: auto;
     }
 
-    #how>.content {
+    #how .content {
         padding-top: 70px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    #home>div{
+    #home div.content{
         padding-top: 58px;
         max-width: 525px;
         max-width: calc(100% - 40px - 506px);

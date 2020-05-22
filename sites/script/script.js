@@ -126,3 +126,6 @@ $('#menuToggle').on('click', function () {
     $('body > .content').toggleClass('active');
 })
 
+$(window).on('resize', function () {
+    $('.bg').css('height', $('body').height());
+}).trigger('resize');

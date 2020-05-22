@@ -114,6 +114,7 @@ li{
 body>.content {
 	overflow: hidden;
 	font-size: 1em;
+	position: relative;
 }
 
 header{
@@ -122,6 +123,7 @@ header{
 	background-color: transparent;
 	text-align: right;
 	z-index: 999;
+	background: transparent linear-gradient(180deg, #000000 0%, #00000000 100%) 0% 0% no-repeat padding-box;
 }
 
 nav{
@@ -152,6 +154,8 @@ nav{
 
 div#main {
     margin-bottom: 80px;
+    /* overflow: hidden; */
+    /* position: relative; */
 }
 
 #main>div{
@@ -169,7 +173,7 @@ div#main {
 	margin-bottom: 60px;
 }
 
-#home>*{
+#home>div.contentWrapper>*{
 	display: inline-block;
 	*zoom: 1;
 	*display: inline;	
@@ -180,11 +184,11 @@ div#main {
 	margin-right: 40px;
 }
 
-#home>div {
+#home>div.content {
     padding-top: 20px;
 }
 
-#home>div>h1{
+#home>div.content>h1{
 	margin-bottom: 20px;
 }
 
@@ -198,25 +202,25 @@ h2 > span {
     padding-right: 10px;
 }
 
-.sub {
-	position: relative;
-	opacity: 0;
-	transform: translate(0, 100px);
+.sub .contentWrapper {
+    opacity: 0;
+    transform: translate(0, 100px);
 }
 
-.sub.inView {
-	opacity: 1;
-	transform: translate(0, 0px);
+.sub.inView .contentWrapper {
+    opacity: 1;
+    transform: translate(0, 0px);
 }
 
-.sub.inView > .subTitle {
+.sub.inView .subTitle {
 	left: 0;
 	opacity: 1;
 }
 
-.sub > .subTitle {
+.sub .subTitle {
 	left: -100%;
 	opacity: 0;
+	z-index: 1;
 }
 
 span.highlight {
@@ -372,11 +376,11 @@ ul.slick-dots {
 	margin-bottom: 60px;
 }
 
-#deals>ul>li {
+#deals ul>li {
     width: 100%;
 }
 
-#deals>ul>li:last-child {
+#deals ul>li:last-child {
     margin-right: 0;
 }
 
@@ -400,36 +404,41 @@ ul.slick-dots {
 
 #artist{
 	margin-top: -95px;
-    padding-top: 95px;
+	padding-top: 95px;
 	margin-bottom: 80px;
+	margin-bottom: 128px;
 }
 
 #slider2 {
-    margin-bottom: 128px;
+    /* margin-bottom: 128px; */
 }
 
-#artist>.content {
+#artist .content {
     padding-top: 120px;
     text-align: left;
     position: relative;
 	margin-bottom: 13px;
 }
 
-#artist>.content > * {
+#artist .content > * {
 	display: inline-block;
 	*zoom: 1;
 	*display: inline;
     vertical-align: top;
 }
 
-#artist>.content>p {
+#artist .content>p {
     margin-bottom: 13px;
 }
 
-#artist>.content>img {
+#artist .content>img {
     max-width: 398px;
 	margin-right: 10px;
 	width: 100%;
+}
+
+.dragon{
+	margin-bottom: 80px;
 }
 
 #dragon {
@@ -476,32 +485,201 @@ ul.slick-dots {
 }
 
 
-#how>.content {
+#how .content {
     padding-top: 120px;
     text-align: center;
 }
 
-#how>.content > * {
+#how .content > * {
     max-width: 440px;
     display: block;
     margin: auto;
 }
 
-#how>.content >img {
+#how .content >img {
     margin-bottom: 14px;
 }
 
-#how>.content >p {
+#how .content >p {
     margin-bottom: 40px;
 }
 
 footer {
     text-align: center;
     margin-bottom: 150px;
+    /* border-bottom: 1px solid; */
 }
 
 footer a {
     display: block;
     color: #fff;
     font-weight: bold;
+}
+
+/* Background Image */
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100% !important;
+    padding: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
+.bg>div{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bg>div:before{
+	content: "";
+	background-size: cover;
+    background-repeat: no-repeat;
+	height: 0;
+	position: relative;
+    display: block;
+}
+
+.effectrecord01bg {
+    max-width: 677px;
+    max-height: 664px;
+    top: 0;
+    right: 0;
+}
+
+.effectrecord01bg:before {
+    padding-top: 98.08%;
+    background-image: url(../images/EffectRecord-01.svg);
+    top: -50%;
+    right: -53%;
+}
+
+.tile9bg{
+	max-width: 350px;
+	max-height: 348px;
+	top: 3%;
+	left: 0;
+}
+
+.tile9bg:before{
+	padding-top: 99.43%;
+	background-image: url(../images/Tile9.svg);
+	left: -65%;
+}
+
+.effectelectro01bg{
+	max-width: 934px;
+	max-height: 1307px;
+	top: 12%;
+	left: 0;
+}
+
+.effectelectro01bg:before{
+	padding-top: 139.94%;
+	background-image: url(../images/EffectElectro-01.svg);
+	left: -55%;
+}
+
+.tile4bg{
+	max-width: 838px;
+	max-height: 838px;
+	top: 15%;
+	right: 0;
+}
+
+.tile4bg:before{
+	padding-top: 100%;
+	background-image: url(../images/Tile4.svg);
+	right: -67%;
+}
+
+.effectrecord02bg {
+    max-width: 502px;
+    max-height: 493px;
+    top: 47%;
+    left: 0;
+}
+
+.effectrecord02bg:before {
+    padding-top: 98.08%;
+    background-image: url(../images/EffectRecord-01.svg);
+    /* top: -50%; */
+    left: -50%;
+}
+
+.effectelectro02bg{
+	max-width: 1179px;
+	max-height: 1307px;
+	top: 34%;
+	right: 0;
+	transform: scaleX(-1);
+}
+
+.effectelectro02bg:before{
+	padding-top: 139.94%;
+	background-image: url(../images/EffectElectro-01.svg);
+	left: -65%;
+	top: -1%;
+}
+
+.tile7bg{
+	max-width: 1013px;
+	max-height: 1013px;
+	top: 72%;
+	left: -5%;
+}
+
+.tile7bg:before{
+	padding-top: 100%;
+	background-image: url(../images/Tile7.svg);
+	left: -21%;
+	top: -4%;
+}
+
+.tile3bg{
+	max-width: 275px;
+	max-height: 275px;
+	top: 92%;
+	left: 0;
+	/* transform: scaleX(-1); */
+}
+
+.tile3bg:before{
+	padding-top: 100%;
+	background-image: url(../images/Tile3.svg);
+	left: -49%;
+	top: 0%;
+}
+
+.effectlinebg{
+	max-width: 1618px;
+	max-height: 1618px;
+	top: 65%;
+	left: 0;
+}
+
+.effectlinebg:before{
+	padding-top: 100%;
+	background-image: url(../images/EffectLines-01.svg);
+	left: -18%;
+}
+
+.effectdragonbg{
+	max-width: 485px;
+	max-height: 650px;
+	bottom: -12%;
+	right: 0;
+}
+
+.effectdragonbg:before{
+	padding-top: 134.02%;
+	background-image: url(../images/EffectDragonBody.svg);
+	right: -37%;
 }
