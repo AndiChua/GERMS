@@ -1,0 +1,259 @@
+/*Media Queries*/
+
+@media only screen and (max-width: 767px) {
+    body>.content #main{
+        position: relative;
+        right: 0;
+    }
+    header{
+        left: -200px;
+        height: 100%;
+        top: 0;
+        background-color: #000;
+    }
+
+    body>.content.active #main{
+        right: -200px;
+    }
+    
+    body>.content.active header {
+        left: 0;
+    }
+
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: 50px;
+        left: 15px;
+        z-index: 1;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    body > .content.active #menuToggle {
+        left: 215px;
+    }
+
+    #menuToggle:before {
+        content: "";
+        background: transparent;
+        display: block;
+        height: 33px;
+        width: 33px;
+        position: absolute;
+        top: -7px;
+        left: -6px;
+        transition: 0.5s ease all;
+    }
+
+    #menuToggle.active:before {
+        content: "";
+        background: white;
+    }   
+
+    #menuToggle > span
+    {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #fff;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+
+    #menuToggle > span:nth-last-child(1)
+    {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle.active > span {
+        background: #000;
+    }
+
+    #menuToggle.active > span
+    {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+    }
+
+    #menuToggle.active > span:nth-last-child(2)
+    {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle.active > span:nth-last-child(1)
+    {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #menu{
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header{
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .scroll {
+        background-color: #000;
+        box-shadow: 0 1px 1px -1px grey;
+    }
+    
+    #menu>li{
+        width: 140px;
+        height: 59px;
+        padding-left: 14px;
+        padding-right: 14px;
+        text-align: left;
+        border-right: 1px solid #666666;
+        display: inline-block;
+        *zoom: 1;
+        *display: inline;
+        margin-bottom: 0px;
+    }
+
+    #menu>li:last-child {
+        padding-right: 0;
+        border-right: 0;
+    }
+
+	#slider1 {
+		padding-top: 178px;
+	}
+    
+    .wiggle.topLeft {
+        animation-duration: 2s;
+        animation-name: topLeftTransform;
+        animation-iteration-count: infinite;
+    }
+    
+    .wiggle.topRight {
+        animation-duration: 2.2s;
+        animation-name: topRightTransform;
+        animation-iteration-count: infinite;
+    }
+    
+    .wiggle.bottomLeft {
+        animation-duration: 2.1s;
+        animation-name: bottomLeftTransform;
+        animation-iteration-count: infinite;
+    }
+    
+    .wiggle.bottomRight {
+        animation-duration: 2.3s;
+        animation-name: bottomLeftTransform;
+        animation-iteration-count: infinite;
+    }
+    
+    #deals>ul>li {
+        width: 305px;
+        width: calc(33% - 50px);
+        margin-right: 50px;
+    }
+
+    #deals{
+        margin-bottom: 147px;
+    }
+
+    #artist>.content {
+        text-align: right;
+    }
+
+    #artist>.content>p {
+        padding-right: 18px;
+        padding-left: 0px;
+        max-width: 671px;
+        max-width: calc(100% - 18px - 398px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 1px;
+        text-align: left;
+    }
+
+    #slider2 .slick-slide {
+        padding-right: 10px;
+    }
+
+    .dragonText h2{
+        margin-bottom: 0;
+    }
+
+    .dragonText h2 br{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #home>div{
+        padding-top: 58px;
+        max-width: 448px;
+        max-width: calc(100% - 40px - 506px);
+    }
+    #artist>.content{
+        padding-top: 59px;
+    }
+
+    #artist>.content>p {
+        padding-left: 89px;
+        max-width: calc(100% - 89px - 18px - 398px);
+    }
+    
+    .dragonText {
+        max-width: 418px;
+        max-width: calc(100% - 649px);
+        padding-right: 30px;
+        padding-bottom: 40px;
+        text-align: right;
+    }
+    
+    .dragonText h2{
+        max-width: 362px;
+    }
+
+    .dragonText p{
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .dragonImage {
+        position: absolute;
+        right: 0;
+        top: -68px;
+        bottom: 0;
+        left: auto;
+    }
+
+    #how>.content {
+        padding-top: 70px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #home>div{
+        padding-top: 58px;
+        max-width: 525px;
+        max-width: calc(100% - 40px - 506px);
+    }
+    
+    .dragonText {
+        max-width: 418px;
+        max-width: calc(100% - 649px);
+        padding-right: 68px;
+    }
+}
